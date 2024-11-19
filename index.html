@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN-API Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .container { display: flex; }
+        .left-panel, .right-panel { margin: 10px; }
+        .left-panel { width: 300px; }
+        .right-panel { flex-grow: 1; }
+        label { display: block; margin: 10px 0 5px; }
+        input, button, textarea { width: 100%; margin-bottom: 15px; padding: 10px; box-sizing: border-box; }
+        textarea { height: 300px; resize: none; }
+        button { cursor: pointer; background-color: #007BFF; color: white; border: none; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <!-- Copyrights -->
+    <header>Directed by Dadametov.Komiljon@gmail.com</header>
+
+    <div class="container">
+        <!-- Left Menu -->
+        <div class="left-panel">
+            <label for="idInstance">idInstance:</label>
+            <input type="text" id="idInstance" placeholder="Введите idInstance">
+
+            <label for="apiTokenInstance">ApiTokenInstance:</label>
+            <input type="text" id="apiTokenInstance" placeholder="Введите ApiTokenInstance">
+
+            <button onclick="getSettings()">getSettings</button>
+            <button onclick="getStateInstance()">getStateInstance</button>
+
+            <label for="phoneNumber">Номер телефона (sendMessage):</label>
+            <input type="text" id="phoneNumber" placeholder="77771234567">
+
+            <label for="message">Сообщение:</label>
+            <input type="text" id="message" placeholder="Hello World!">
+
+            <button onclick="sendMessage()">sendMessage</button>
+
+            <label for="filePhoneNumber">Номер телефона (sendFileByUrl):</label>
+            <input type="text" id="filePhoneNumber" placeholder="77771234567">
+
+            <label for="fileUrl">URL файла:</label>
+            <input type="text" id="fileUrl" placeholder="https://example.com/file.png">
+
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
+
+        <!-- Right workspace -->
+        <div class="right-panel">
+            <label for="response">Ответ:</label>
+            <textarea id="response" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
